@@ -6,7 +6,7 @@ const CargoPerfil = document.querySelector('.cargo');
 const containerProjetos = document.querySelector('.projetos');
 
 //de quem eu vou pegar essas informações
-const usuarioGithub = 'ScarletAraujo';
+const usuarioGithub = 'KDalcantara';
 
 //dados do perfil vindo da API
 
