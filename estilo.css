@@ -193,7 +193,16 @@ footer {
 }
 
 .projetos .projeto-imagem {
+  position: relative;
   height: 100px;
+  overflow: hidden;
+}
+
+.projetos .projeto-imagem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .projeto-1 {
@@ -311,18 +320,53 @@ footer {
   background: #fef2f2;
 }
 
-.form-skill {
+.form-skills {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
   margin-top: 24px;
+  padding-top: 24px;
+  padding: 20px;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  background: #ecfdf5;
+  box-shadow: 0 8px 20px rgb(15 118 110 / 8%);
 }
 
-.form-skill input {
-  flex: 1;
+.form-skills label {
+  color: #065f46;
+  font-weight: 600;
+}
+
+.form-skills input {
+  width: 100%;
   padding: 12px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #6ee7b7;
   border-radius: 8px;
-  font: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  color: #0f172a;
+  background: white;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-skills input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgb(20 184 166 / 20%);
+}
+
+.form-skills button {
+  align-self: flex-start;
+  margin-top: 0;
+  background: #0f766e;
+}
+
+.form-skills button:hover {
+  background: #115e59;
+}
+
+.skill-status:empty {
+  display: none;
 }
 
 @media (max-width: 560px) {
