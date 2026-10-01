@@ -2,7 +2,8 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Kelvin Alcântara· Sobre mim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin Alcântara · Sobre mim</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,15 +13,16 @@
     <link rel="stylesheet" href="./estilo.css" />
   </head>
   <body>
+    <a class="link-pular" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <header>
-      <img src="" alt="Foto de Kelvin Alcantara" />
+      <img src="./images/kelvin%20curriculo.jpg" alt="Foto de Kelvin Alcantara" />
       <div>
-        <h1></h1>
-        <p class="cargo"></p>
+        <h1>Kelvin Alcantara</h1>
+        <p class="cargo">Engenharia de software</p>
       </div>
     </header>
 
-    <main>
+    <main id="conteudo-principal">
       <section>
         <h2>Sobre mim</h2>
         <p>
@@ -34,7 +36,8 @@
 
       <section class="skills">
         <h2>O que estou aprendendo</h2>
-        <ul class="lista-skills"></ul>
+        <ul class="lista-skills" aria-label="Habilidades aprendidas"></ul>
+        <p class="skill-status" role="status" aria-live="polite"></p>
         <form class="form-skills">
           <label for="nova-skill">Adicionar skill</label>
           <input
@@ -51,26 +54,26 @@
 
       <section>
         <h2>Meus projetos</h2>
-        <div class="projetos">
+        <div class="projetos" aria-live="polite" aria-busy="true">
           <article>
-            <div class="projeto-imagem projeto-1"></div>
+            <div class="projeto-imagem projeto-1" aria-hidden="true"></div>
             <h3>Calculadora</h3>
             <p>App de calculadora simpels feito com HTML, CSS e JS puro</p>
-            <a href="#">Ver projeto</a>
+            <a href="https://github.com/KDalcantara?tab=repositories" aria-label="Ver o projeto Calculadora no GitHub">Ver projeto</a>
           </article>
 
           <article>
-            <div class="projeto-imagem projeto-2"></div>
+            <div class="projeto-imagem projeto-2" aria-hidden="true"></div>
             <h3>Blog</h3>
             <p>Blog responsivo construído do zero.</p>
-            <a href="#">Ver projeto</a>
+            <a href="https://github.com/KDalcantara?tab=repositories" aria-label="Ver o projeto Blog no GitHub">Ver projeto</a>
           </article>
 
           <article>
-            <div class="projeto-imagem projeto-3"></div>
+            <div class="projeto-imagem projeto-3" aria-hidden="true"></div>
             <h3>Lista de tarefas</h3>
             <p>App de calculadora simpels feito com HTML, CSS e JS puro</p>
-            <a href="#">Ver projeto</a>
+            <a href="https://github.com/KDalcantara?tab=repositories" aria-label="Ver o projeto Lista de tarefas no GitHub">Ver projeto</a>
           </article>
         </div>
       </section>
@@ -78,24 +81,24 @@
       <section>
         <h2>Vamos conversar?</h2>
         <p>Você pode me encontrar nos meus perfis ou enviar uma mensagem.</p>
-        <a href="https://github.com/thiagobraddock">Meu GitHub</a>
-        <button class="btn-mensagem">Enviar mensagem</button>
+        <a href="https://github.com/KDalcantara">Meu GitHub</a>
+        <button class="btn-mensagem" type="button" aria-expanded="false" aria-controls="formulario-contato">Enviar mensagem</button>
 
         <!-- adição do formulário para a aula -->
-        <form class="formulario-contato escondido">
-          <label>Nome</label>
-          <input type="text" class="input-nome" />
+        <form class="formulario-contato" id="formulario-contato" hidden>
+          <label for="nome-usuario">Nome</label>
+          <input type="text" class="input-nome" id="nome-usuario" name="nome" autocomplete="name" required />
 
-          <label>Email</label>
-          <input type="email" class="input-email" />
+          <label for="email-usuario">Email</label>
+          <input type="email" class="input-email" id="email-usuario" name="email" autocomplete="email" required />
 
-          <label>Mensagem</label>
-          <textarea class="input-mensagem"></textarea>
+          <label for="mensagem-usuario">Mensagem</label>
+          <textarea class="input-mensagem" id="mensagem-usuario" name="mensagem" required></textarea>
 
           <button type="submit">Enviar</button>
         </form>
 
-        <p class="feedback"></p>
+        <p class="feedback" role="status" aria-live="polite" aria-atomic="true" hidden></p>
         <!-- fim do form -->
       </section>
     </main>

@@ -16,6 +16,21 @@ body {
   line-height: 1.6;
 }
 
+.link-pular {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  transform: translateY(-160%);
+  background: #0f172a;
+  color: white;
+  padding: 8px 12px;
+  z-index: 1;
+}
+
+.link-pular:focus {
+  transform: translateY(0);
+}
+
 /* ===== Cabeçalho centralizado ===== */
 header {
   display: flex;
@@ -69,7 +84,7 @@ section {
 
 h2 {
   font-size: 24px;
-  color: #2563eb;
+  color: #1d4ed8;
   margin-bottom: 16px;
 }
 
@@ -98,7 +113,7 @@ ul li {
 
 /* ===== Link ===== */
 a {
-  color: #2563eb;
+  color: #1d4ed8;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
@@ -128,11 +143,16 @@ button:hover {
   background: #1d4ed8;
 }
 
+:is(a, button, input, textarea):focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
 /* ===== Rodapé ===== */
 footer {
   text-align: center;
   margin-top: 48px;
-  color: #94a3b8;
+  color: #475569;
   font-size: 14px;
 }
 
@@ -193,14 +213,14 @@ footer {
 
 .projetos article p {
   padding: 0 16px;
-  color: #64748b;
+  color: #475569;
   flex-grow: 1;
   /* fazer os p se "esticarem" e ficarem todos no mesmo tamanho */
 }
 
 .projetos article a {
   margin: 12px 16px 16px 12px;
-  color: #2563eb;
+  color: #1d4ed8;
   text-decoration: none;
   font-weight: 600;
 }
@@ -226,6 +246,8 @@ footer {
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
+  color: #0f172a;
+  background: white;
 }
 
 .formulario-contato textarea {
@@ -236,10 +258,6 @@ footer {
 .formulario-contato button {
   align-self: flex-start;
   margin-top: 0;
-}
-
-.escondido {
-  display: none;
 }
 
 .feedback-sucesso {
@@ -260,8 +278,8 @@ footer {
   background: transparent;
   border: none;
 
-  width: 24px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
@@ -275,4 +293,72 @@ footer {
   padding: 0;
   margin: 0;
   line-height: 1;
+}
+
+.aviso {
+  width: 100%;
+  text-align: center;
+  color: #475569;
+  font-style: italic;
+  padding: 24px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+}
+
+.aviso.erro {
+  color: #b91c1c;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.form-skill {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.form-skill input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  header,
+  section {
+    padding: 20px;
+  }
+
+  header {
+    align-items: flex-start;
+  }
+
+  header img {
+    width: 96px;
+    height: 96px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .form-skills {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
